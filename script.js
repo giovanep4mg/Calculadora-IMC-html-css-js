@@ -1,5 +1,6 @@
 //variáveis
-const resultado = document.querySelector("#resultado")
+const resultadoIMC = document.querySelector("#resultadoIMC")
+const resultadoGRAU = document.querySelector("#resultadoGRAU")
 const altura = document.querySelector("#altura")
 const peso = document.querySelector("#peso")
 
@@ -8,7 +9,8 @@ const peso = document.querySelector("#peso")
 const calcIMC = () => {
 
     if (altura.value != "" && peso.value != "") {
-        const imc = (peso.value / (altura.value * altura.value).toFixed(2))
+        //cria uma variável que vai receber a conta para saber qual é o IMC
+        const imc = (peso.value / (altura.value * altura.value).toFixed());
         //variável
         let classification = "";
 
@@ -26,7 +28,9 @@ const calcIMC = () => {
             classification = "Obesidade grau 3"
         }
 
-        resultado.innerHTML = "IMC:($imc) (${ classification })"
+
+        resultadoIMC.innerHTML = "O seu IMC é: " + imc;
+        resultadoGRAU.innerHTML = classification
     } else {
         resultado.innerHTML = "preencha os campos"
     }
