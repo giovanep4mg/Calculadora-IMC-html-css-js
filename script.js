@@ -1,15 +1,19 @@
 //variáveis
-const resultado = document.querySelector("#resultado")
+const resultadoIMC = document.querySelector("#resultadoIMC")
+const resultadoGRAU = document.querySelector("#resultadoGRAU")
 const altura = document.querySelector("#altura")
 const peso = document.querySelector("#peso")
 
 
-
+//função
 const calcIMC = () => {
-
+    // faz uma verificação, se os campos estão vazios ou não 
     if (altura.value != "" && peso.value != "") {
-        const imc = (peso.value / (altura.value * altura.value).toFixed(2))
-        //variável
+
+        //cria uma variável "imc" que vai receber a conta para saber qual é o IMC
+        const imc = (peso.value / (altura.value * altura.value).toFixed());
+
+        //variável para guarda o resultado do "if"
         let classification = "";
 
         if (imc < 18.5) {
@@ -26,7 +30,9 @@ const calcIMC = () => {
             classification = "Obesidade grau 3"
         }
 
-        resultado.innerHTML = "IMC:($imc) (${ classification })"
+        // mostra o "imc" do usuário
+        resultadoIMC.innerHTML = "O seu IMC é: " + imc;
+        resultadoGRAU.innerHTML = classification
     } else {
         resultado.innerHTML = "preencha os campos"
     }

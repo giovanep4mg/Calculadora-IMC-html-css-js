@@ -7,22 +7,30 @@
     <title>Calculadora de IMC</title>
     <!--CSS---->
     <link rel="stylesheet" href="style.css">
+    <!--LINKS PARA O GITHUB-->
+    <link href="https://giovanep4mg.github.io/Calculadora-IMC-html-css-js/style.css" rel="stylesheet">
+    <script src="https://giovanep4mg.github.io/Calculadora-IMC-html-css-js/script.js"></script>
 </head>
 <body>
     <main>
         <header><h1>Calculadora de IMC</h1></header>
+        <!---cria um campo de numero, para pegar a altura digitada pelo usuário-->
         <div class="divAltura">
             <label for="altura">Altura (m)</label>
             <input type="number" id="altura">
         </div>
+        <!---cria um campo de numero, para pegar o peso digitado pelo usuário-->
         <div class="divPeso">
             <label for="peso">Peso (Kg)</label>
             <input type="number" id="peso">
         </div>
+        <!---cria um botao, que vai iniciar a função "calcIMC"-->
         <div class="divCalc">
             <button onclick="calcIMC()" >Calcular</button>
         </div>
-        <span id="resultado"></span>
+        <!-----Mostra os resultados na página-->
+        <span id="resultadoIMC"></span>
+        <span id="resultadoGRAU"></span>
     </main>
     <!---JS---->
     <script src="script.js">
